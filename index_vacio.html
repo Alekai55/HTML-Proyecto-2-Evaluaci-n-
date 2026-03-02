@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -127,8 +127,60 @@
 
     <!-- Fin Acrodeón Alex -->
 
+    <!-- Inicio modo oscuro Alex -->
+
+    <style>
+        :root {
+            --verde: #00C17C;
+            --verde-suave: #e6f9f2;
+            --oscuro: #0D1B2A;
+            --gris: #6c757d;
+            --radio: 12px;
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-bs-theme="dark"] {
+            --verde-suave: #0a2e1e;
+        }
+    </style>
+
+    <button id="btnTema" type="button" style="width:50px; height: 50px; border-radius: 50%;  border:#00C17C solid currentColor" aria-label="Cambiar tema">
+        <i class="bi bi-moon-stars-fill  " id="iconTema"></i>
+    </button>
+
+    <script>
+     
+        const html = document.documentElement;
+        const btnTema = document.getElementById('btnTema');
+        const iconTema = document.getElementById('iconTema');
+        const CLAVE = 'temaConsultora';
+
+        function aplicarTema(tema) {
+            html.setAttribute('data-bs-theme', tema);
+            localStorage.setItem(CLAVE, tema);
+            if (tema === 'dark') {
+                iconTema.className = 'bi bi-sun-fill';
+                btnTema.setAttribute('aria-label', 'Cambiar a modo claro');
+            } else {
+                iconTema.className = 'bi bi-moon-stars-fill';
+                btnTema.setAttribute('aria-label', 'Cambiar a modo oscuro');
+            }
+        }
+
+        aplicarTema(localStorage.getItem(CLAVE) || 'light');
+
+        btnTema.addEventListener('click', () => {
+            aplicarTema(html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+
+      <!-- Fin modo oscuro Alex -->
+
+
     <!-- Inicio footer -->
-     <footer>
+    <footer>
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <span>© 2026 <strong>DAM Xtart</strong> · Todos los derechos reservados.</span>
             <div class="d-flex gap-3">
@@ -141,7 +193,7 @@
             </div>
         </div>
     </footer>
-     <!-- end footer -->
+    <!-- end footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
