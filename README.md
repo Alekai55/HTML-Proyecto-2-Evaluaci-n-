@@ -37,7 +37,7 @@ De una idea en papel a un ecosistema funcional. Este ha sido el progreso de desa
 Este portal web no requiere procesos de *build* complejos ni instalación de dependencias pesadas, ya que hace uso de CDNs para optimizar la carga.
 
 1. Clona este repositorio en tu equipo local o tu IDE preferido:
-   `git clone [https://github.com/Daniel19Arias/Lenguaje_marcas.git](https://github.com/Daniel19Arias/Lenguaje_marcas.git)`
+   `git clone [https://github.com/Daniel19Arias/Lenguaje_marcas.git](https://github.com/Daniel19Arias/Lenguaje_marcas.git](https://github.com/Alekai55/HTML-Proyecto-2-Evaluaci-n-.git)`
 2. Navega hasta el directorio del proyecto.
 3. Abre el archivo `index_tailwind_daisy.html` directamente en tu navegador web.
 
