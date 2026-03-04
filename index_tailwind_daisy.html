@@ -169,34 +169,28 @@
                         </div>
                     </div>
 
-                    <div class="lg:w-1/2 relative w-full">
-                        <div
-                            class="relative w-full aspect-[4/3] rounded-2xl bg-base-300 border-2 border-primary/30 shadow-2xl flex flex-col items-center justify-center text-primary overflow-hidden">
-                            <img src="img/foto_portada.png" alt="Portada"
-                                class="object-cover w-full h-full absolute inset-0"
-                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
-                            <div class="flex-col items-center justify-center gap-2 hidden z-10 p-4 text-center">
-                                <svg class="w-12 h-12 opacity-50" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    <div class="lg:w-1/2 flex justify-center w-full">
+                        <div class="relative w-full max-w-xl">
+
+                            <div
+                                class="relative w-full aspect-[4/3] rounded-2xl bg-base-300 border-2 border-primary/30 shadow-2xl overflow-hidden">
+                                <img src="img/foto_portada.png" alt="Portada"
+                                    class="object-cover w-full h-full absolute inset-0" />
+                            </div>
+
+                            <div data-aos="fade-left"
+                                class="absolute -bottom-5 left-4 shadow-lg bg-primary text-primary-content py-2 px-5 rounded-full font-semibold text-sm flex items-center gap-2">
+                                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
                                 </svg>
+                                <a href="https://www.amazon.es/Los-Faroles-MIRAHADAS-J%C3%93VENES-ADULTOS/dp/8419454087/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HY5B3KQJKRN8&dib=eyJ2IjoiMSJ9.SXhuhjGutfq8gnoddaWYTjq8x66b6YUGPKd2_5Gj_Dw.VOeQvuL3bFAzkNUbooPQwEy5Hk20MOrYiINnP21Tk78&dib_tag=se&keywords=ares+sancho&qid=1772617478&sprefix=ares+san%2Caps%2C882&sr=8-1"
+                                    target="_blank" class="hover:underline font-bold">Nuestras raíces</a>
                             </div>
 
                         </div>
-                        <div data-aos="fade-left" class="absolute -bottom-5 left-6 shadow-lg bg-primary
-                            text-primary-content py-2 px-5 rounded-full font-semibold text-sm flex items-center gap-2">
-                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
-                            </svg>
-                            <button><a
-                                    href="https://www.amazon.es/Los-Faroles-MIRAHADAS-J%C3%93VENES-ADULTOS/dp/8419454087/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1HY5B3KQJKRN8&dib=eyJ2IjoiMSJ9.SXhuhjGutfq8gnoddaWYTjq8x66b6YUGPKd2_5Gj_Dw.VOeQvuL3bFAzkNUbooPQwEy5Hk20MOrYiINnP21Tk78&dib_tag=se&keywords=ares+sancho&qid=1772617478&sprefix=ares+san%2Caps%2C882&sr=8-1"
-                                    target="_blank">Nuestras raíces</a></button>
-                        </div>
                     </div>
-                </div>
             </section>
             <!-- fin de seccion de inicio -->
             <!-- Inicio sección sobre nosotros -->
@@ -219,7 +213,7 @@
                             <div class="card-body text-center items-center">
                                 <div
                                     class="w-24 h-24 rounded-full border-4 border-primary mx-auto object-cover flex items-center justify-center bg-base-200 text-primary text-4xl mb-4 overflow-hidden">
-                                    <img class="imagen-miembro w-full h-full object-cover" src="" alt="Foto"/>
+                                    <img class="imagen-miembro w-full h-full object-cover" src="" alt="Foto" />
                                 </div>
                                 <span class="rol-miembro badge badge-primary badge-outline mb-2"></span>
                                 <h4 class="nombre-miembro card-title font-bold text-2xl"></h4>
@@ -593,28 +587,28 @@
         //Preparamos la información a listar (Array de objetos)
         const equipo = [
             {
-                imagen: "img/pixel_Alex.png", 
+                imagen: "img/pixel_Alex.png",
                 rol: "Diseñador",
                 nombre: "Alejandro",
                 descripcion: "Creador de ideas e historias, diseño de la web y cohesión de proyectos",
                 enlace: "https://alekairecords.xo.je"
             },
             {
-                imagen: "img/pixel_Miguel.png", 
+                imagen: "img/pixel_Miguel.png",
                 rol: "Administrador BD",
                 nombre: "Miguel",
                 descripcion: "Gestor de base de datos y diseñador, maquetador de código",
                 enlace: "https://miguel.xo.je"
             },
             {
-                imagen: "img/pixel_Dani.png", 
+                imagen: "img/pixel_Dani.png",
                 rol: "Programador",
                 nombre: "Daniel",
                 descripcion: "Programador del código principal del proyecto y tester del juego",
                 enlace: "https://danielarias.xo.je"
             },
             {
-                imagen: "img/pixel_Roman.png", 
+                imagen: "img/pixel_Roman.png",
                 rol: "Gestor de Sistemas",
                 nombre: "Román",
                 descripcion: "Gestor de sistemas informáticos y redes",
