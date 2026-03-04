@@ -18,7 +18,7 @@ Cuatro perfiles complementarios con distintas formas de ver el código. Aprovech
 Aplicamos de forma práctica nuestras áreas de especialización utilizando las siguientes herramientas:
 
 * **Desarrollo Front-end y Diseño Web:** Creación de portales modernos y responsivos utilizando HTML5, Tailwind CSS y DaisyUI, con implementaciones dinámicas en JavaScript y animaciones AOS.
-* **Desarrollo de Software y Lógica de Negocio:** Programación robusta y orientada a objetos en Java utilizando IntelliJ, incluyendo la creación de interfaces gráficas nativas con JPanel y JFrame.
+* **Desarrollo de Software y Lógica de Negocio:** Programación robusta y orientada a objetos en Java utilizando IntelliJ, incluyendo la creación de interfaces gráficas nativas con JPanel.
 * **Arquitectura de Bases de Datos:** Diseño de modelos Entidad-Relación, normalización estructurada y consultas eficientes utilizando MySQL, MariaDB y DBeaver.
 * **Sistemas Informáticos y Redes:** Instalación, configuración, administración y virtualización de entornos seguros utilizando Linux, Windows Server y VirtualBox.
 
@@ -37,7 +37,7 @@ De una idea en papel a un ecosistema funcional. Este ha sido el progreso de desa
 Este portal web no requiere procesos de *build* complejos ni instalación de dependencias pesadas, ya que hace uso de CDNs para optimizar la carga.
 
 1. Clona este repositorio en tu equipo local o tu IDE preferido:
-   `git clone [https://github.com/Daniel19Arias/Lenguaje_marcas.git](https://github.com/Daniel19Arias/Lenguaje_marcas.git](https://github.com/Alekai55/HTML-Proyecto-2-Evaluaci-n-.git)`
+   `git clone [https://github.com/Alekai55/HTML-Proyecto-2-Evaluaci-n-.git](https://github.com/Alekai55/HTML-Proyecto-2-Evaluaci-n-.git)`
 2. Navega hasta el directorio del proyecto.
 3. Abre el archivo `index_tailwind_daisy.html` directamente en tu navegador web.
 
