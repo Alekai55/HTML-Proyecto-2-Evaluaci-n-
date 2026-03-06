@@ -21,7 +21,7 @@
         <div class="flex-1">
             <a href="#inicio"
                 class="btn btn-ghost text-2xl font-bold text-primary hover:bg-transparent flex items-center gap-2">
-                <img src="logo_trebol.png" alt="logo" class="w-7 h-7 hidden sm:block" />
+                <img src="img/logo_trebol.png" alt="logo" class="w-7 h-7 md:w-8 lg:w-10 object-contain"/>
                 ADROMI Tech
             </a>
         </div>
@@ -100,7 +100,7 @@
                 </svg>
             </label>
             <!-- final de boton cambio de tema -->
-            <!-- Inicio navabar -->
+             <!-- Inicio navabar -->
 
             <div class="dropdown dropdown-end lg:hidden">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
@@ -135,11 +135,11 @@
             </div>
         </div>
     </nav>
-    <!-- final navbar -->
+     <!-- final navbar -->
 
     <div class="drawer drawer-end">
         <input id="drawer-contacto" type="checkbox" class="drawer-toggle" />
-        <!-- inicio seccion de inicio -->
+         <!-- inicio seccion de inicio -->
         <div class="drawer-content flex flex-col">
             <section id="inicio" class="hero min-h-[90vh] bg-base-200/50 relative overflow-hidden pt-16">
                 <div
@@ -590,44 +590,91 @@
 
     </div>
 
+     <!-- Inicio JavaScript para el cambio de tema  -->
     <script>
-        // Cambio de tema
         document.getElementById('checkbox-tema').addEventListener('change', () => {
-            const current = document.documentElement.getAttribute('data-theme');
-            document.documentElement.setAttribute('data-theme', current === 'forest' ? 'emerald' : 'forest');
-        });
-
-        // Carga dinámica del equipo
-        const equipo = [
-            { imagen: "img/pixel_Alex.png", rol: "Diseñador", nombre: "Alejandro", descripcion: "Creador de historias y diseño web", enlace: "https://alekairecords.xo.je" },
-            { imagen: "img/pixel_Miguel.png", rol: "Administrador BD", nombre: "Miguel", descripcion: "Gestor de DB y maquetador", enlace: "https://miguel.xo.je" },
-            { imagen: "img/pixel_Dani.png", rol: "Programador", nombre: "Daniel", descripcion: "Código principal y tester", enlace: "https://danielarias.xo.je" },
-            { imagen: "img/pixel_Roman.png", rol: "Gestor de Sistemas", nombre: "Román", descripcion: "Gestor de sistemas y redes", enlace: "https://roman.xo.je" }
-        ];
-
-        const contenedorEquipo = document.getElementById("contenedor-equipo");
-        const templateMiembro = document.getElementById("template-miembro");
-        contenedorEquipo.innerHTML = "";
-
-        equipo.forEach(miembro => {
-            let clon = templateMiembro.cloneNode(true);
-            clon.style.display = "";
-            clon.removeAttribute('id');
-            clon.querySelector(".imagen-miembro").src = miembro.imagen;
-            clon.querySelector(".rol-miembro").textContent = miembro.rol;
-            clon.querySelector(".nombre-miembro").textContent = miembro.nombre;
-            clon.querySelector(".desc-miembro").textContent = miembro.descripcion;
-            clon.querySelector(".enlace-miembro").href = miembro.enlace;
-            contenedorEquipo.appendChild(clon);
+            if (document.documentElement.getAttribute('data-theme') == 'forest') {
+                document.documentElement.setAttribute('data-theme', 'emerald');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'forest');
+            }
         });
     </script>
+    <!-- Final JavaScript para el cambio de tema -->
+    <!-- Inicio del script de carga dinámica del equipo(Para la integración de Román o nuevos integrantes) -->
+    <script>
+        //Preparamos la información a listar (Array de objetos)
+        const equipo = [
+            {
+                imagen: "img/pixel_Alex.png",
+                rol: "Diseñador",
+                nombre: "Alejandro",
+                descripcion: "Creador de ideas e historias, diseño de la web y cohesión de proyectos",
+                enlace: "https://alekairecords.xo.je"
+            },
+            {
+                imagen: "img/pixel_Miguel.png",
+                rol: "Administrador BD",
+                nombre: "Miguel",
+                descripcion: "Gestor de base de datos y diseñador, maquetador de código",
+                enlace: "https://miguel.xo.je"
+            },
+            {
+                imagen: "img/pixel_Dani.png",
+                rol: "Programador",
+                nombre: "Daniel",
+                descripcion: "Programador del código principal del proyecto y tester del juego",
+                enlace: "https://danielarias.xo.je"
+            },
+            {
+                imagen: "img/pixel_Roman.png",
+                rol: "Gestor de Sistemas",
+                nombre: "Román",
+                descripcion: "Gestor de sistemas informáticos y redes",
+                enlace: "https://roman.xo.je"
+            }
+        ];
+
+        // Obtenemos el div del listado
+        const contenedorEquipo = document.getElementById("contenedor-equipo");
+
+        // Obtenemos el producto inicial para clonar su estructura
+        const templateMiembro = document.getElementById("template-miembro");
+
+        // Vaciamos el listado para llenarlo con el nuevo contenido
+        // (Al hacer innerHTML="", borramos la plantilla del HTML, pero sigue guardada en memoria en 'templateMiembro')
+        contenedorEquipo.innerHTML = "";
+
+        // Se recorre el array para crear una nueva tarjeta por cada miembro
+        equipo.forEach(miembro => {
+            // Clonamos la plantilla (y le quitamos el style="display:none")
+            let miembroClonado = templateMiembro.cloneNode(true);
+            miembroClonado.style.display = "";
+            miembroClonado.removeAttribute('id'); // Quitamos el ID para no repetirlo
+
+            // Rellenamos la información usando las clases que pusimos en el HTML
+            miembroClonado.querySelector(".imagen-miembro").src = miembro.imagen;
+            miembroClonado.querySelector(".rol-miembro").textContent = miembro.rol;
+            miembroClonado.querySelector(".nombre-miembro").textContent = miembro.nombre;
+            miembroClonado.querySelector(".desc-miembro").textContent = miembro.descripcion;
+            miembroClonado.querySelector(".enlace-miembro").href = miembro.enlace;
+
+            // Añadimos el clon ya rellenado al contenedor
+            contenedorEquipo.appendChild(miembroClonado);
+        });
+    </script>
+    <!-- Fin del script de carga dinámica del equipo -->
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init();</script>
-
     <script>
-        document.getElementById('form-contacto').addEventListener('submit', async function (e) {
+        AOS.init();
+    </script>
+
+    <!-- Inicio php para Drawer de contacto -->
+    <script>
+        document.getElementById('form-contacto').addEventListener('submit', async function(e) {
             e.preventDefault();
+
             const btn = document.getElementById('btn-enviar');
             const msg = document.getElementById('form-msg');
             const form = this;
@@ -636,32 +683,34 @@
             btn.textContent = 'Enviando...';
             msg.classList.add('hidden');
 
+            const datos = new FormData(form);
+
             try {
                 const respuesta = await fetch('contacto.php', {
                     method: 'POST',
-                    body: new FormData(form)
+                    body: datos
                 });
                 const json = await respuesta.json();
 
                 if (json.ok) {
                     form.reset();
-                    // Opcional: Cerrar drawer tras éxito
                     document.getElementById('drawer-contacto').checked = false;
-                    alert("¡Mensaje enviado con éxito!");
                 } else {
-                    msg.textContent = json.error || 'Error al enviar.';
+                    msg.textContent = json.error || 'Error al enviar. Inténtalo de nuevo.';
                     msg.className = 'text-sm text-center mb-3 text-error';
-                    msg.classList.remove('hidden');
                 }
             } catch {
-                msg.textContent = 'Error de conexión.';
+                msg.textContent = 'Error de conexión. Inténtalo de nuevo.';
                 msg.className = 'text-sm text-center mb-3 text-error';
-                msg.classList.remove('hidden');
             }
+
             btn.disabled = false;
             btn.innerHTML = `<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg> Enviar mensaje`;
         });
     </script>
+
+    <!-- Fin php para Drawer de contacto  -->
+     
 </body>
 
 </html>
