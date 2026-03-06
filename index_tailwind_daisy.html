@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="emerald">
+<html lang="es" data-theme="emerald" class="overflow-x-hidden">
+<!-- el overflow-x-hidden en el html es para evitar para evitar que las animaciones de AOS creen espacio extra a la derecha.  -->
 
 <head>
     <meta charset="UTF-8" />
@@ -17,11 +18,11 @@
 <body class="bg-base-100 text-base-content overflow-x-hidden scroll-smooth">
 
     <nav
-        class="navbar bg-base-100/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-primary/20 px-4 lg:px-8">
+        class="navbar bg-base-100/90 backdrop-blur-md fixed top-0 left-0 right-0 z-[100] border-b border-primary/20 px-4 lg:px-8">
         <div class="flex-1">
             <a href="#inicio"
-                class="btn btn-ghost text-2xl font-bold text-primary hover:bg-transparent flex items-center gap-2">
-                <img src="img/logo_trebol.png" alt="logo" class="w-7 h-7 md:w-8 lg:w-10 object-contain"/>
+                class="btn btn-ghost text-xl sm:text-2xl font-bold text-primary hover:bg-transparent flex items-center gap-2">
+                <img src="img/logo_trebol.png" alt="logo" class="w-7 h-7 md:w-8 lg:w-10 object-contain" />
                 ADROMI Tech
             </a>
         </div>
@@ -100,7 +101,7 @@
                 </svg>
             </label>
             <!-- final de boton cambio de tema -->
-             <!-- Inicio navabar -->
+            <!-- Inicio navabar -->
 
             <div class="dropdown dropdown-end lg:hidden">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
@@ -111,7 +112,7 @@
                     </svg>
                 </div>
                 <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 border border-base-200">
+                    class="menu menu-sm dropdown-content mt-3 z-[101] p-2 shadow bg-base-100 rounded-box w-52 border border-base-200">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
@@ -135,12 +136,12 @@
             </div>
         </div>
     </nav>
-     <!-- final navbar -->
+    <!-- final navbar -->
 
-    <div class="drawer drawer-end">
+    <div class="drawer drawer-end overflow-x-hidden">
         <input id="drawer-contacto" type="checkbox" class="drawer-toggle" />
-         <!-- inicio seccion de inicio -->
-        <div class="drawer-content flex flex-col">
+        <!-- inicio seccion de inicio -->
+        <div class="drawer-content flex flex-col overflow-x-hidden">
             <section id="inicio" class="hero min-h-[90vh] bg-base-200/50 relative overflow-hidden pt-16">
                 <div
                     class="hero-content flex-col lg:flex-row gap-12 py-24 px-4 max-w-screen-2xl mx-auto relative w-full">
@@ -590,7 +591,7 @@
 
     </div>
 
-     <!-- Inicio JavaScript para el cambio de tema  -->
+    <!-- Inicio JavaScript para el cambio de tema  -->
     <script>
         document.getElementById('checkbox-tema').addEventListener('change', () => {
             if (document.documentElement.getAttribute('data-theme') == 'forest') {
@@ -667,12 +668,17 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            offset: 120, // Distancia para disparar la animación
+            duration: 800, // Duración
+            // once: true, // Que solo se anime una vez para evitar saltos al hacer scroll
+            // disable: 'mobile' // OPCIONAL: Si la línea blanca persiste, usa esto para desactivar animaciones en móvil
+        });
     </script>
 
     <!-- Inicio php para Drawer de contacto -->
     <script>
-        document.getElementById('form-contacto').addEventListener('submit', async function(e) {
+        document.getElementById('form-contacto').addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const btn = document.getElementById('btn-enviar');
@@ -710,7 +716,7 @@
     </script>
 
     <!-- Fin php para Drawer de contacto  -->
-     
+
 </body>
 
 </html>
