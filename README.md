@@ -60,3 +60,5 @@ Al trabajar en distintas ramas sobre un archivo con estilos muy marcados, tenía
 1. Clona este repositorio en tu máquina local:
    ```bash
    git clone (https://github.com/Alekai55/HTML-Proyecto-2-Evaluaci-n-.git)
+2. Navega hasta el directorio del proyecto.
+3. Abre el archivo `index_tailwind_daisy.html` directamente en tu navegador web.
