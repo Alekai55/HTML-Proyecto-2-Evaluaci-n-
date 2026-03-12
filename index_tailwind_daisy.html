@@ -223,10 +223,11 @@ Si cambia a forest con el cambio de tema, igual -->
                         <!-- Se fija el tamaño máximo de las tarjetas(en movil todo el ancho y en pantalla 280px) para evitar que al añadir más miembros el diseño se rompa, 
                         y se centra el contenedor para que quede bien aunque haya pocas tarjetas. El gap-8 fija la separacion-->
                         <div id="template-miembro"
-                            class="card bg-base-100 shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-base-200 flex-1 w-full max-w-[280px]"
+                            class="card bg-base-100 shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-base-200 sm:flex-1 w-full max-w-[280px]"
                             style="display: none;" data-aos="flip-up" data-aos-duration="1000">
                             <!-- Se cambia el aos a esta sección para que en el movil, el efecto al bajar sea una a una de cada tarjeta
-                             hover:-translate-y-2, la tarjeta sube un poco al pasar por ella -->
+                             hover:-translate-y-2, la tarjeta sube un poco al pasar por ella 
+                             Gracias a sm:flex: me permite que en el movil se vea una debajo de otra y que luego ya en pantallas grandes ocupen el max como esta estipulado-->
                             <div class="card-body text-center items-center p-4 lg:p-6">
                                 <div
                                     class="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-4 border-primary mx-auto flex items-center justify-center bg-base-200 text-primary text-4xl mb-2 overflow-hidden">
