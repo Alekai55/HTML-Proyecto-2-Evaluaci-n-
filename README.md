@@ -11,7 +11,7 @@ Bienvenido al repositorio oficial de nuestra plataforma web estilo consultoría 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-En un principio, diseñamos la estructura base utilizando **Bootstrap** como base educativa. Sin embargo, tras descubrir y experimentar con **Tailwind CSS**, decidimos pivotar y migrar el proyecto a este framework. Esto nos permitió aprovechar los conceptos de diseño responsivo aprendidos, logrando un acabado mucho más moderno y personalizado.
+En un principio, diseñamos la estructura base utilizando **Bootstrap** como base educativa. Sin embargo, tras descubrir y experimentar con **Tailwind CSS** y **Daisy UI**, decidimos pivotar y migrar el proyecto a este framework. Esto nos permitió aprovechar los conceptos de diseño responsivo aprendidos, logrando un acabado mucho más moderno y personalizado.
 
 ---
 
@@ -49,8 +49,16 @@ Para garantizar un desarrollo ágil y profesional, simulamos un entorno empresar
 
 ---
 
+## ⚙️ Problemas resueltos
+
+Al trabajar en distintas ramas sobre un archivo con estilos muy marcados, teníamos problemas al combinar los elementos y por ello decidimos trabajar todos sobre la misma rama main.
+
+
+
 ## 🚀 Instalación y Despliegue
 
 1. Clona este repositorio en tu máquina local:
    ```bash
    git clone (https://github.com/Alekai55/HTML-Proyecto-2-Evaluaci-n-.git)
+2. Navega hasta el directorio del proyecto.
+3. Abre el archivo `index_tailwind_daisy.html` directamente en tu navegador web.
