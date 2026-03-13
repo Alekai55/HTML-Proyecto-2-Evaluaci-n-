@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="emerald" class="overflow-x-hidden">
 <!-- el overflow-x-hidden en el html es para evitar para evitar que las animaciones de AOS creen espacio extra a la derecha.  -->
-
+<!-- Al definir el tema en emerald, por ejemplo, cuasndo usamos primary en el código, se adaptará automáticamente al color primario definido en el tema emerald
+Si cambia a forest con el cambio de tema, igual -->
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -205,28 +206,37 @@
             <!-- fin de seccion de inicio -->
             <!-- Inicio sección sobre nosotros -->
             <section id="sobre-nosotros" class="bg-base-200">
-                <div class="py-24 px-4 max-w-7xl mx-auto" data-aos="fade-down" data-aos-duration="1000">
+                <!-- bg-base es una clase de DaisyUI que se adapta al tema actual, por lo que el fondo de esta sección cambiará automáticamente al cambiar el tema -->
+                <div class="py-24 px-6 max-w-7xl mx-auto" data-aos="fade-down" data-aos-duration="1000">
+                    <!-- max-w-7xl: Limita el ancho máximo a 1280px. Evita que el texto se estire demasiado en pantallas gigantes. mx-auto: Centra este bloque horizontalmente. -->
                     <span class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block text-center">El
                         equipo</span>
+                        <!-- tracking-[0.2em]: Espaciado entre letras -->
                     <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-base-content text-center">Sobre nosotros</h2>
                     <div class="w-12 h-1 bg-primary rounded my-6 mx-auto"></div>
                     <p class="text-base-content/70 max-w-2xl leading-relaxed text-lg text-center mx-auto mb-16">
                         Cuatro personas, cuatro formas de ver el código. Aprovechamos los puntos fuertes de cada uno de
                         nosotros y nos apoyamos en la creación de código.
                     </p>
-                    <div id="contenedor-equipo" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8"
-                        data-aos="flip-up" data-aos-duration="1000">
+                    <div id="contenedor-equipo" class="flex flex-wrap justify-center gap-8 w-full">
+                        <!-- Se decide cambiar a flexbox porque asi podemos centrar los miembros y mantener un buen diseño incluso si el número de miembros cambia(con la carga dinámica). -->
+                        <!-- Se fija el tamaño máximo de las tarjetas(en movil todo el ancho y en pantalla 280px) para evitar que al añadir más miembros el diseño se rompa, 
+                        y se centra el contenedor para que quede bien aunque haya pocas tarjetas. El gap-8 fija la separacion-->
                         <div id="template-miembro"
-                            class="card bg-base-100 shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-base-200"
-                            style="display: none;">
-                            <div class="card-body text-center items-center">
+                            class="card bg-base-100 shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-base-200 sm:flex-1 w-full max-w-[280px]"
+                            style="display: none;" data-aos="flip-up" data-aos-duration="1000">
+                            <!-- Se cambia el aos a esta sección para que en el movil, el efecto al bajar sea una a una de cada tarjeta
+                             hover:-translate-y-2, la tarjeta sube un poco al pasar por ella 
+                             Gracias a sm:flex: me permite que en el movil se vea una debajo de otra y que luego ya en pantallas grandes ocupen el max como esta estipulado-->
+                            <div class="card-body text-center items-center p-4 lg:p-6">
                                 <div
-                                    class="w-24 h-24 rounded-full border-4 border-primary mx-auto object-cover flex items-center justify-center bg-base-200 text-primary text-4xl mb-4 overflow-hidden">
-                                    <img class="imagen-miembro w-full h-full object-cover" />
+                                    class="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-4 border-primary mx-auto flex items-center justify-center bg-base-200 text-primary text-4xl mb-2 overflow-hidden">
+                                    <img class="imagen-miembro w-full h-full object-cover [image-rendering:pixelated]" />
+                                    <!-- image-rendering:pixelated, permite que en la pantalla grande de clase, agrande el pixel para que no se vea tan borroso -->
                                 </div>
                                 <span class="rol-miembro badge badge-primary badge-outline mb-2"></span>
                                 <h4 class="nombre-miembro card-title font-bold text-2xl"></h4>
-                                <p class="desc-miembro text-sm text-base-content/70 mt-2 mb-4"></p>
+                                <p class="desc-miembro text-sm lg:text-base text-base-content/70 mt-2 mb-4"></p>
                                 <div class="card-actions mt-auto flex gap-2">
                                     <a href="" target="_blank"
                                         class="enlace-miembro btn btn-sm btn-outline btn-primary rounded-full font-semibold flex items-center gap-1">
@@ -294,7 +304,7 @@
                                     <span class="badge badge-accent font-semibold text-xs">JavaScript</span>
                                     <span class="badge badge-accent font-semibold text-xs">JPanel</span>
                                 </div>
-                                <a href="https://github.com/Daniel19Arias/Lenguaje_marcas" target="_blank"
+                                <a href="https://github.com/Alekai55/ProyectoFinal-2-Evaluaci-n" target="_blank"
                                     class="btn btn-sm btn-outline btn-primary rounded-full font-semibold flex items-center gap-2 inline-flex">
                                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         fill="currentColor">
@@ -354,7 +364,7 @@
                                     <span class="badge badge-accent font-semibold text-xs">MariaDB</span>
                                     <span class="badge badge-accent font-semibold text-xs">DBeaver</span>
                                 </div>
-                                <a href="https://ecosdelbosqueroto.rf.gd/base/index.html"
+                                <a href="https://ecosdelbosqueroto.rf.gd/base/index.html" target="_blank"
                                     class="btn btn-sm btn-outline btn-primary rounded-full font-semibold flex items-center gap-1 inline-flex">
                                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -383,7 +393,7 @@
                                     <span class="badge badge-accent font-semibold text-xs">Windows Server</span>
                                     <span class="badge badge-accent font-semibold text-xs">VirtualBox</span>
                                 </div>
-                                <a href="https://ancoya-my.sharepoint.com/:w:/g/personal/miguel_de_la_iglesia_estudiante_xtart_com/IQBPcbjC0SrVQbw8TTp0vPbEATtlQzNYbLvHtxuJiOPedo4?e=nzjbcf"
+                                <a href="https://ancoya-my.sharepoint.com/:w:/g/personal/miguel_de_la_iglesia_estudiante_xtart_com/IQBPcbjC0SrVQbw8TTp0vPbEATtlQzNYbLvHtxuJiOPedo4?e=nzjbcf" target="_blank"
                                     class="btn btn-sm btn-outline btn-primary rounded-full font-semibold flex items-center gap-1 inline-flex">
                                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -493,7 +503,8 @@
                                     <p class="text-xs font-bold uppercase text-primary tracking-widest mb-1">Feb 2026
                                     </p>
                                     <h4 class="font-bold text-lg">Segunda evaluación</h4>
-                                    <p class="text-sm text-base-content/70 mt-1">Rediseño con Tailwind y DaisyUI.</p>
+                                    <p class="text-sm text-base-content/70 mt-1">Código Java refactorizado.<br>Creación
+                                        de base de datos. <br>Rediseño con Tailwind y DaisyUI.</p>
                                 </div>
                                 <div class="timeline-middle text-primary">
                                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -579,7 +590,7 @@
                 <p>© 2026 <strong>DAM Xtart</strong> · Todos los derechos reservados.</p>
             </aside>
             <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-                <a href="https://github.com/Daniel19Arias/Lenguaje_marcas" target="_blank"
+                <a href="https://github.com/Alekai55/ProyectoFinal-2-Evaluaci-n" target="_blank"
                     class="hover:text-primary flex items-center gap-1 font-bold">
                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd"
