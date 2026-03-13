@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="emerald" class="overflow-x-hidden">
 <!-- el overflow-x-hidden en el html es para evitar para evitar que las animaciones de AOS creen espacio extra a la derecha.  -->
-<!-- Al definir el tema en emerald, por ejemplo, cuasndo usamos primary en el código, se adaptará automáticamente al color primario definido en el tema emerald
+<!-- Al definir el tema en emerald, por ejemplo, cuando usamos primary en el código, se adaptará automáticamente al color primario definido en el tema emerald
 Si cambia a forest con el cambio de tema, igual -->
 <head>
     <meta charset="UTF-8" />
@@ -17,7 +17,7 @@ Si cambia a forest con el cambio de tema, igual -->
 </head>
 
 <body class="bg-base-100 text-base-content overflow-x-hidden scroll-smooth">
-
+<!-- Inicio navabar -->
     <nav
         class="navbar bg-base-100/90 backdrop-blur-md fixed top-0 left-0 right-0 z-[100] border-b border-primary/20 px-4 lg:px-8">
         <div class="flex-1">
@@ -86,6 +86,8 @@ Si cambia a forest con el cambio de tema, igual -->
                 class="btn btn-primary rounded-full text-white font-semibold btn-sm md:btn-md cursor-pointer hidden sm:flex">
                 Contáctanos
             </label>
+            <!-- final navbar -->
+
             <!-- inicio de boton cambio de tema -->
             <label class="flex cursor-pointer gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -102,8 +104,8 @@ Si cambia a forest con el cambio de tema, igual -->
                 </svg>
             </label>
             <!-- final de boton cambio de tema -->
-            <!-- Inicio navabar -->
-
+            
+            <!-- Inicio dropdown -->
             <div class="dropdown dropdown-end lg:hidden">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -137,7 +139,7 @@ Si cambia a forest con el cambio de tema, igual -->
             </div>
         </div>
     </nav>
-    <!-- final navbar -->
+    <!-- Final dropdown -->
 
     <div class="drawer drawer-end overflow-x-hidden">
         <input id="drawer-contacto" type="checkbox" class="drawer-toggle" />
