@@ -13,8 +13,11 @@ Si cambia a forest con el cambio de tema, igual -->
 
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- Importacion Daisy -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importación tailwind -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Importación aos -->
 </head>
 
 <body class="bg-base-100 text-base-content overflow-x-hidden scroll-smooth">
@@ -229,16 +232,19 @@ Si cambia a forest con el cambio de tema, igual -->
                         Cuatro personas, cuatro formas de ver el código. Aprovechamos los puntos fuertes de cada uno de
                         nosotros y nos apoyamos en la creación de código.
                     </p>
+                    <!-- Inicio contenedor tarjetas_equipo -->
                     <div id="contenedor-equipo" class="flex flex-wrap justify-center gap-8 w-full">
                         <!-- Se decide cambiar a flexbox porque asi podemos centrar los miembros y mantener un buen diseño incluso si el número de miembros cambia(con la carga dinámica). -->
-                        <!-- Se fija el tamaño máximo de las tarjetas(en movil todo el ancho y en pantalla 280px) para evitar que al añadir más miembros el diseño se rompa, 
-                        y se centra el contenedor para que quede bien aunque haya pocas tarjetas. El gap-8 fija la separacion-->
+                        <!-- Inicio tarjeta individual -->
                         <div id="template-miembro"
                             class="card bg-base-100 shadow-xl hover:-translate-y-2 transition-transform duration-300 border border-base-200 sm:flex-1 w-full max-w-[280px]"
                             style="display: none;" data-aos="flip-up" data-aos-duration="1000">
+                            <!-- Con display none hace que no se vea y sirva de plantilla -->
+                            <!-- Tamaño máximo de las tarjetas(en movil todo el ancho y en pantalla 280px) para evitar que al añadir más miembros el diseño se rompa, 
+                                y se centra el contenedor.-->
                             <!-- Se cambia el aos a esta sección para que en el movil, el efecto al bajar sea una a una de cada tarjeta
                              hover:-translate-y-2, la tarjeta sube un poco al pasar por ella 
-                             Gracias a sm:flex: me permite que en el movil se vea una debajo de otra y que luego ya en pantallas grandes ocupen el max como esta estipulado-->
+                             Gracias a sm:flex: me permite que en el movil se vea una debajo de otra y que luego ya en pantallas grandes ocupen el mismo espacio-->
                             <div class="card-body text-center items-center p-4 lg:p-6">
                                 <div
                                     class="w-24 h-24 lg:w-32 lg:h-32 rounded-full border-4 border-primary mx-auto flex items-center justify-center bg-base-200 text-primary text-4xl mb-2 overflow-hidden">
@@ -246,10 +252,10 @@ Si cambia a forest con el cambio de tema, igual -->
                                         class="imagen-miembro w-full h-full object-cover [image-rendering:pixelated]" />
                                     <!-- image-rendering:pixelated, permite que en la pantalla grande de clase, agrande el pixel para que no se vea tan borroso -->
                                 </div>
-                                <span class="rol-miembro badge badge-primary badge-outline mb-2"></span>
+                                <!-- <span class="rol-miembro badge badge-primary badge-outline mb-2"></span> badge outline pone solo bord ey fondo transparente -->
                                 <h4 class="nombre-miembro card-title font-bold text-2xl"></h4>
                                 <p class="desc-miembro text-sm lg:text-base text-base-content/70 mt-2 mb-4"></p>
-                                <div class="card-actions mt-auto flex gap-2">
+                                 <div class="card-actions mt-auto flex gap-2">  <!--mt-auto empuja los botones abajo -->
                                     <a href="" target="_blank"
                                         class="enlace-miembro btn btn-sm btn-outline btn-primary rounded-full font-semibold flex items-center gap-1">
                                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -271,8 +277,8 @@ Si cambia a forest con el cambio de tema, igual -->
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> <!-- Final tarjeta individual -->
+                    </div> <!-- Final contenedor tarjetas_equipo -->
                 </div>
             </section>
             <!-- Final seccion sobre nosotros -->
@@ -424,29 +430,42 @@ Si cambia a forest con el cambio de tema, igual -->
 
             <!-- Inicio de Línea de Tiempo  -->
             <section id="timeline" class="bg-base-200">
+                <!-- id timeline para cuando le de a progreso me mande aquí directamente -->
                 <div class="py-24 px-4 max-w-7xl mx-auto">
+                    <!-- max-w-7xl hace que el texto no se estire en pantallas enormes. Con mx-auto se centra -->
                     <div data-aos="zoom-in-down" data-aos-duration="1000">
                         <span
                             class="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-3 block text-center">Nuestro
                             recorrido</span>
+                        <!-- El span solo ocupa el ancho exacto de las letras que tiene dentro. 
+                             Al poner la clase block, obligas al span a comportarse como un div y con textcenter la centro -->
                         <h2 class="text-4xl lg:text-5xl font-bold mb-4 text-base-content text-center">Progreso del curso
                         </h2>
+                        <!-- Gracias a text-base-conten, el texto se adapta al tema(oscuro-claro), cambiando a tonos claros-oscuros -->
                         <div class="w-12 h-1 bg-primary rounded my-6 mx-auto"></div>
-                        <p class="text-base-content/70 max-w-2xl leading-relaxed text-lg text-center mx-auto mb-16">
+                        <!-- Linea decorativa con color del tema -->
+                        <!-- content/70 usa el tema peor con opacidad para que se vea mas claro -->
+                        <p class="text-base-content/70 max-w-2xl text-lg text-center mx-auto mb-16">
                             De cero a un videojuego funcional. Este es el camino que hemos recorrido juntos.
                         </p>
                     </div>
 
                     <div class="flex justify-center w-full" data-aos="zoom-in-up" data-aos-duration="1000">
-                        <ul class="timeline timeline-vertical lg:timeline-horizontal max-w-5xl">
+                        <ul class="timeline timeline-vertical max-w-5xl">
+                            <!-- timeline es la clase de Daisy que por defecto es horizontal
+                        La queremos vertical 
+                        Gracias a max-w-5xl no se desproporciona en pantallas grandes-->
                             <li>
+                                <!-- timeline start es izda y end es dcha. box es la forma -->
                                 <div class="timeline-start timeline-box border-primary/20 bg-base-100 shadow-md">
                                     <p class="text-xs font-bold uppercase text-primary tracking-widest mb-1">Sept 2025
-                                    </p>
+                                    </p> <!--tracking widest mete mucho espaciado entre letras -->
                                     <h4 class="font-bold text-lg">Primeros pasos</h4>
                                     <p class="text-sm text-base-content/70 mt-1">Estructura básica HTML y CSS.</p>
                                 </div>
                                 <div class="timeline-middle text-primary">
+                                    <!-- Con timelinemiddle, haces que en este caso, el icono, se posicione en el centro de la linea
+                                    y sea del color base -->
                                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         fill="currentColor">
                                         <path fill-rule="evenodd"
@@ -455,6 +474,7 @@ Si cambia a forest con el cambio de tema, igual -->
                                     </svg>
                                 </div>
                                 <hr class="bg-primary" />
+                                <!-- Esto es horizontal rule, que es para dibujar la linea y la pongo del color del tema -->
                             </li>
                             <li>
                                 <hr class="bg-primary" />
@@ -598,10 +618,10 @@ Si cambia a forest con el cambio de tema, igual -->
 
         <!-- Inicio footer -->
         <footer class="footer items-center p-8 bg-base-300 text-base-content border-t border-primary/20">
-            <aside class="items-center grid-flow-col">
+            <aside class="items-center">
                 <p>© 2026 <strong>DAM Xtart</strong> · Todos los derechos reservados.</p>
             </aside>
-            <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+            <nav class="flex gap-4 md:absolute md:right-8 mt-4 md:mt-0">
                 <a href="https://github.com/Alekai55/ProyectoFinal-2-Evaluaci-n" target="_blank"
                     class="hover:text-primary flex items-center gap-1 font-bold">
                     <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
