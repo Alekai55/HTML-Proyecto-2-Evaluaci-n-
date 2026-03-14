@@ -736,8 +736,20 @@ Si cambia a forest con el cambio de tema, igual -->
                 const json = await respuesta.json();
 
                 if (json.ok) {
+                    //Si hay respuesta, se manda mensaje de éxito para el feedbak al usuario 
+                    msg.textContent = '¡Mensaje enviado con éxito! Te responderemos lo antes posible.';
+                    msg.className = 'text-sm text-center mb-3 text-success';
+                    msg.classList.remove('hidden');
+                    //remove(hidden) quita que esté oculto y que se vea
+
+                    //Deespués, se limpia el formulario
                     form.reset();
-                    document.getElementById('drawer-contacto').checked = false;
+
+                    //Para que no se cierre el lateral de inmediato, se espera 2 segundos
+                    setTimeout(() => {
+                        document.getElementById('drawer-contacto').checked = false;
+                        msg.classList.add('hidden'); // Ocultar el mensaje para que no salga de primeras la proxima vez (luego sale con remove(hidden))
+                    }, 2000);
                 } else {
                     msg.textContent = json.error || 'Error al enviar. Inténtalo de nuevo.';
                     msg.className = 'text-sm text-center mb-3 text-error';
