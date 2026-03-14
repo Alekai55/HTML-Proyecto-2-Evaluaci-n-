@@ -1,6 +1,5 @@
- 
- <!-- Inicio JavaScript para el cambio de tema  -->
-    <script>
+<!-- Inicio JavaScript para el cambio de tema  -->
+<!-- <script>
         document.getElementById('checkbox-tema').addEventListener('change', () => {
             if (document.documentElement.getAttribute('data-theme') == 'forest') {
                 document.documentElement.setAttribute('data-theme', 'emerald');
@@ -8,14 +7,14 @@
                 document.documentElement.setAttribute('data-theme', 'forest');
             }
         });
-    </script>
-    <!-- Final JavaScript para el cambio de tema -->
+    </script> -->
+<!-- Final JavaScript para el cambio de tema -->
 
 
 
 
-    <!-- Inicio del script de carga dinámica del equipo(Para la integración de Román o nuevos integrantes) -->
-    <script>
+<!-- Inicio del script de carga dinámica del equipo(Para la integración de Román o nuevos integrantes) -->
+<!-- <script>
         //Preparamos la información a listar (Array de objetos)
         const equipo = [
             {
@@ -64,48 +63,59 @@
             // Añadimos el clon ya rellenado al contenedor
             contenedorEquipo.appendChild(miembroClonado);
         });
-    </script>
-    <!-- Fin del script de carga dinámica del equipo -->
+    </script> -->
+<!-- Fin del script de carga dinámica del equipo -->
 
 
 
-    <!-- Inicio php para Drawer de contacto -->
-    <script>
-        document.getElementById('form-contacto').addEventListener('submit', async function (e) {
-            e.preventDefault();
+<!-- Inicio php para Drawer de contacto -->
+<!-- <script>
+    document.getElementById('form-contacto').addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-            const btn = document.getElementById('btn-enviar');
-            const msg = document.getElementById('form-msg');
-            const form = this;
+        const btn = document.getElementById('btn-enviar');
+        const msg = document.getElementById('form-msg');
+        const form = this;
 
-            btn.disabled = true;
-            btn.textContent = 'Enviando...';
-            msg.classList.add('hidden');
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        msg.classList.add('hidden');
 
-            const datos = new FormData(form);
+        const datos = new FormData(form);
 
-            try {
-                const respuesta = await fetch('contacto.php', {
-                    method: 'POST',
-                    body: datos
-                });
-                const json = await respuesta.json();
+        try {
+            const respuesta = await fetch('contacto.php', {
+                method: 'POST',
+                body: datos
+            });
+            const json = await respuesta.json();
 
-                if (json.ok) {
-                    form.reset();
+            if (json.ok) {
+                //Si hay respuesta, se manda mensaje de éxito para el feedbak al usuario 
+                msg.textContent = '¡Mensaje enviado con éxito! Te responderemos lo antes posible.';
+                msg.className = 'text-sm text-center mb-3 text-success';
+                msg.classList.remove('hidden');
+                //remove(hidden) quita que esté oculto y que se vea
+
+                //Deespués, se limpia el formulario
+                form.reset();
+
+                //Para que no se cierre el lateral de inmediato, se espera 2 segundos
+                setTimeout(() => {
                     document.getElementById('drawer-contacto').checked = false;
-                } else {
-                    msg.textContent = json.error || 'Error al enviar. Inténtalo de nuevo.';
-                    msg.className = 'text-sm text-center mb-3 text-error';
-                }
-            } catch {
-                msg.textContent = 'Error de conexión. Inténtalo de nuevo.';
+                    msg.classList.add('hidden'); // Ocultar el mensaje para que no salga de primeras la proxima vez (luego sale con remove(hidden))
+                }, 2000);
+            } else {
+                msg.textContent = json.error || 'Error al enviar. Inténtalo de nuevo.';
                 msg.className = 'text-sm text-center mb-3 text-error';
             }
+        } catch {
+            msg.textContent = 'Error de conexión. Inténtalo de nuevo.';
+            msg.className = 'text-sm text-center mb-3 text-error';
+        }
 
-            btn.disabled = false;
-            btn.innerHTML = `<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg> Enviar mensaje`;
-        });
-    </script>
-
-    <!-- Fin php para Drawer de contacto  -->
+        btn.disabled = false;
+        btn.innerHTML = `<svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg> Enviar mensaje`;
+    });
+</script> -->
+<!-- Fin php para Drawer de contacto  -->
